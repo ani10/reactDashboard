@@ -17,9 +17,20 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
-      minHeight: "100px",
-      minWidth: "140px"
+      height: "100px",
+      width: "150px",
+      borderRadius: 0
     },
+    paperAddStats: {
+      padding: theme.spacing(2),
+      textAlign: 'center',
+      color: "#ff8b64",
+      fontWeight: "bold",
+      height: "100px",
+      width: "112px",
+      borderRadius: 0,
+      justifyContent: "center"
+    }
   })
 )
 
@@ -34,13 +45,18 @@ const QuickStatusBar = () => {
     <Grid container className={classes.root}>
       <Grid item xs={12}>
         <Grid container justify="flex-start" spacing={0}>
-          {[1,2,9,3,23,4,43, 85, 34,84, 45].map((value) => (
+          {[1,2,9,3,23,4,43, 85, 34,84].map((value) => (
             <Grid key={value} item>
               <Paper className={classes.paper}>
                 <div className={classes.title}>{value}</div>
               </Paper>
             </Grid>
           ))}
+          <Grid item>
+              <Paper className={classes.paperAddStats}>
+                <div>+ Add more Stats</div>
+              </Paper>
+            </Grid>
         </Grid>
       </Grid>
     </Grid>
