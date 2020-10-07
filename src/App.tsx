@@ -4,6 +4,7 @@ import NavBar from "./bars/navBar";
 import QuickStatusBar from "./bars/quickStatsBar"
 import './App.css';
 import LineChart from './panels/lineChart';
+import DoughnutChart from './panels/doughnutChart';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <NavBar />
       <QuickStatusBar />
       <LineChart></LineChart>
+      <DoughnutChart></DoughnutChart>
     </div>
   );
 }

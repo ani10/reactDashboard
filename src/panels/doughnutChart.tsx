@@ -1,6 +1,6 @@
 import React from "react";
 import CanvasJSReact from "../canvasjs.react";
-import * as DATA from "../mockdata/lineChartData.json";
+import * as DATA from "../mockdata/pieChartData.json";
 import ChartData from "../interfaces/ChartData";
 import { makeStyles, createStyles, Theme, Card } from "@material-ui/core";
 
@@ -9,7 +9,7 @@ createStyles(
     {
       root: {
         flexGrow: 1,
-        maxWidth: 1000,
+        maxWidth: 400,
         margin: 20,
         marginLeft: 90,
         boxShadow: "1px 0 13px 1px grey",
@@ -18,18 +18,15 @@ createStyles(
     }
   )
 );
+
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
-const LineChart: React.FC = () => {
+const DoughnutChart: React.FC =() => {
   const classes = useStyles();
   const options: ChartData = JSON.parse(JSON.stringify(DATA)).default;
   return (
-  <Card className={classes.root}>
-    <CanvasJSChart options = {options}
-      /* onRef={ref => this.chart = ref} */
-    />
-    {/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-  </Card>
+    <Card className={classes.root}>   
+      <CanvasJSChart options = {options}/>
+    </Card>
   );
 }
-
-export default LineChart;
+export default DoughnutChart;

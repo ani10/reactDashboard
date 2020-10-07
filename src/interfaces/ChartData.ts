@@ -19,5 +19,5 @@ export default interface ChartData {
 interface DataFormat {
   type: string,
   toolTipContent: string,
-  dataPoints: Array<{x: number, y:number}>
+  dataPoints: Array<{x: number	, y:number}>
 }
