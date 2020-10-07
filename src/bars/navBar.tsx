@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: drawerWidth,
       background: "#ff8a65",
       border: "none",
-      boxShadow: "1px 0 10px 0.5px black"
+      boxShadow: "1px 0 13px 1px grey"
     },
   })
 )

@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const SearchBar = () => {
+const SearchBar: React.FC = () => {
   const classes = useStyles();
 
   return(

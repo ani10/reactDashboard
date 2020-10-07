@@ -15,13 +15,13 @@ createStyles(
   )
 );
 
-const Header = () => {
+const Header: React.FC = () => {
 
   const classes = useStyles();
 
   return(
     <div className={classes.root}>
-      <AppBar color="transparent">
+      <AppBar color="white">
         <ToolBar>
           <SearchBar></SearchBar>
         </ToolBar>
