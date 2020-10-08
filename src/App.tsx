@@ -5,7 +5,7 @@ import QuickStatusBar from "./bars/quickStatsBar"
 import './App.css';
 import LineChart from './panels/lineChart';
 import DoughnutChart from './panels/doughnutChart';
-import {  Grid, Hidden, makeStyles, Theme, createStyles } from '@material-ui/core';
+import {  Grid, makeStyles, Theme, createStyles } from '@material-ui/core';
 import ChatPanel from './panels/chatPanel';
 
 
@@ -17,7 +17,7 @@ createStyles(
         margin: "64px 0 0 64px"
       },
       mainGrid: {
-        margin: " 84px 0 0 10px"
+        padding: "110px 20px 20px 20px"
       }
     }
   )
@@ -32,19 +32,15 @@ function App() {
         <NavBar />
         <QuickStatusBar />
         <Grid className={classes.mainGrid} container spacing={3}>
-          <Grid item lg={12}>
-          </Grid>
-          <Grid item lg={6} sm={11}>
+          <Grid item lg={5} sm={12}>
             <LineChart></LineChart>
           </Grid>
-          <Grid item lg={4} sm={11}>
+          <Grid item lg={3} sm={6}>
             <DoughnutChart></DoughnutChart>
           </Grid>
-          <Hidden only="sm">
-            <Grid item lg={2}>
-              <ChatPanel></ChatPanel>
-            </Grid>
-          </Hidden>
+          <Grid item lg={4} sm={6}>
+            <ChatPanel></ChatPanel>
+          </Grid>
         </Grid>
       </Grid>
 

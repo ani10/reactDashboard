@@ -9,7 +9,6 @@ createStyles(
     {
       root: {
         flexGrow: 1,
-        maxWidth: 1000,
         boxShadow: "1px 0 13px 1px grey",
         padding: "10px"
       },

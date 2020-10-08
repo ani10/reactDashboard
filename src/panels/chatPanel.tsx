@@ -1,7 +1,8 @@
 import React from "react";
-import AppBar from '@material-ui/core/AppBar';
-import ToolBar from '@material-ui/core/Toolbar';
-import { makeStyles, Theme, createStyles } from "@material-ui/core";
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import ForumIcon from '@material-ui/icons/Forum';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import { makeStyles, Theme, createStyles, Card } from "@material-ui/core";
 
 const useStyles = makeStyles((theme: Theme) => 
 createStyles(
@@ -9,6 +10,17 @@ createStyles(
       root: {
         flexGrow: 1,
         color: "#fc6860",
+      },
+      chatbox: {
+        height: '800px'
+      },
+      chatHeadButtons: {
+        display: "inline-block",
+        background: "#fc6860",
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        width: "33.33%",
       },
     }
   )
@@ -20,7 +32,17 @@ const ChatPanel: React.FC = () => {
 
   return(
     <div className={classes.root}>
-      component works
+      <Card className={classes.chatbox}>
+          <Card className={classes.chatHeadButtons} square={true}>
+            <PeopleAltIcon></PeopleAltIcon>
+          </Card>
+          <Card className={classes.chatHeadButtons} square={true}>
+            <ForumIcon></ForumIcon>
+          </Card>
+          <Card className={classes.chatHeadButtons} square={true}>
+            <ThumbUpAltIcon></ThumbUpAltIcon>
+          </Card>
+      </Card>
     </div>
   )
 }
