@@ -11,9 +11,8 @@ function App() {
   return (
     <div className="App">
 
-      <Header />
       <Grid>
-      </Grid>
+        <Header />
         <Grid container spacing={3} wrap="wrap">
           <NavBar />
           <Grid item xs={12}>
@@ -26,6 +25,8 @@ function App() {
             <DoughnutChart></DoughnutChart>
           </Grid>
         </Grid>
+      </Grid>
+
     </div>
   );
 }

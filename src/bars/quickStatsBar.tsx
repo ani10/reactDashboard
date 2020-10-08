@@ -1,10 +1,10 @@
+/* eslint-disable array-callback-return */
 import React from "react";
-import { createStyles, makeStyles, Theme, Grid, Paper, Box, Card } from "@material-ui/core";
+import { createStyles, makeStyles, Theme, Grid, Box, Card } from "@material-ui/core";
 import * as quickStats from "../mockdata/quickStats.json";
 import QuickStat from "../interfaces/QuickStat";
 import ArrowDropDownSharpIcon from '@material-ui/icons/ArrowDropDownSharp';
 import ArrowDropUpSharpIcon from '@material-ui/icons/ArrowDropUpSharp';
-import { green } from "@material-ui/core/colors";
 
 const useStyles = makeStyles((theme: Theme) => 
   createStyles({
