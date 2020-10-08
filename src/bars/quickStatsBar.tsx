@@ -39,10 +39,11 @@ const useStyles = makeStyles((theme: Theme) =>
       color: 'red'
     },
     quickStatRoot: {
-      marginLeft: "64px",
+      position: "fixed",
       width: "100%",
       whiteSpace: "nowrap",
       overflowX: "scroll",
+      zIndex: 999
     },
     cardStat: {
       display: "inline-block",
@@ -53,7 +54,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: "150px",
     },
     cardAddStats: {
-      position: "absolute",
+      position: "fixed",
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
@@ -63,6 +64,7 @@ const useStyles = makeStyles((theme: Theme) =>
       height: "100px",
       width: "112px",
       borderRadius: 0,
+      zIndex: 1000
     },
     anchor: {
       color: "#ff8b64",
@@ -86,7 +88,7 @@ const QuickStatusBar: React.FC = () => {
   })
   
   return(
-    <Box marginTop="76px">
+    <Box>
     <Grid container className={classes.root}>
       <div  className={classes.quickStatRoot}>
         {data.map((item : QuickStat, index: number = 0) => {
