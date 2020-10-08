@@ -39,25 +39,33 @@ const useStyles = makeStyles((theme: Theme) =>
       color: 'red'
     },
     quickStatRoot: {
-      display: "flex",
-      flexDirection: "row",
+      marginLeft: "64px",
+      width: "100%",
+      whiteSpace: "nowrap",
+      overflowX: "scroll",
     },
     cardStat: {
+      display: "inline-block",
       padding: theme.spacing(2),
       textAlign: 'center',
       color: theme.palette.text.secondary,
       height: "100px",
       width: "150px",
     },
-    paperAddStats: {
-      padding: theme.spacing(2),
+    cardAddStats: {
+      position: "absolute",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      right: 0,
       textAlign: 'center',
-      color: "#ff8b64",
       fontWeight: "bold",
       height: "100px",
       width: "112px",
       borderRadius: 0,
-      justifyContent: "center"
+    },
+    anchor: {
+      color: "#ff8b64",
     }
   })
 )
@@ -80,33 +88,23 @@ const QuickStatusBar: React.FC = () => {
   return(
     <Box marginTop="64px">
     <Grid container className={classes.root}>
-      <Grid item xs={12}>
-        <Paper classes={{root: classes.quickStatRoot}} square={true}>
-          {data.map((item : QuickStat, index: number = 0) => {
-            index++;
-            return(
-              <Card classes={{root: classes.cardStat}} key={index} square={true}>
-                <div className={classes.cardCategory}>{item.category}</div>
-                <div className={classes.cardtotal}>{item.total}</div>
-                  <ArrowDropUpSharpIcon className={classes.upArrow} fontSize='small' classes={{fontSizeSmall: classes.triangleIndicator}}></ArrowDropUpSharpIcon><span className={classes.cardHigh}>{item.high}</span>
-                  <ArrowDropDownSharpIcon className={classes.downArrow} fontSize='small' classes={{fontSizeSmall: classes.triangleIndicator}}></ArrowDropDownSharpIcon><span className={classes.cardLow}>{item.low}</span>
-              </Card>
-            )
-          })}
-          {/* <Grid container spacing={0}>
-            {totals.map((value: number) => (
-              <Grid key={value} item>
-                <Paper className={classes.paper}>
-                  <div className={classes.cardtotal}>{value}</div>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid> */}
-      </Paper> 
-        <Paper component='span' className={classes.paperAddStats}>
-          + Add more Stats
-        </Paper>
-      </Grid>
+      <div  className={classes.quickStatRoot}>
+        {data.map((item : QuickStat, index: number = 0) => {
+          index++;
+          return(
+            <Card classes={{root: classes.cardStat}} key={index} square={true}>
+              <div className={classes.cardCategory}>{item.category}</div>
+              <div className={classes.cardtotal}>{item.total}</div>
+                <ArrowDropUpSharpIcon className={classes.upArrow} fontSize='small' classes={{fontSizeSmall: classes.triangleIndicator}}></ArrowDropUpSharpIcon><span className={classes.cardHigh}>{item.high}</span>
+                <ArrowDropDownSharpIcon className={classes.downArrow} fontSize='small' classes={{fontSizeSmall: classes.triangleIndicator}}></ArrowDropDownSharpIcon><span className={classes.cardLow}>{item.low}</span>
+            </Card>
+          )
+        })} 
+        <Card classes={{root: classes.cardStat}}></Card> 
+      </div> 
+      <Card className={classes.cardAddStats}>
+           <a className={classes.anchor} href="#"> + Add more Stats </a>
+      </Card>
     </Grid>
     </Box>
   );
