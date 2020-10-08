@@ -16,8 +16,8 @@ createStyles(
       },
       chatbox: {
         height: '800px',
-        flexDirection: "row",
-        overflowY: "scroll"
+        overflowY: "scroll",
+        marginTop: "-10px"
       },
       chatBar: {
 
@@ -64,7 +64,7 @@ const ChatPanel: React.FC = () => {
 
   return(
     <div className={classes.root}>
-      <Card className={classes.chatbox}>
+      <Card className={classes.chatbox} square={true}>
         <Box className={classes.chatBar}>
           <Card className={classes.chatHeadButtons} square={true}>
             <PeopleAltIcon></PeopleAltIcon>

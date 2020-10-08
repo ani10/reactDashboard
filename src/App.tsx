@@ -17,7 +17,7 @@ createStyles(
         margin: "64px 0 0 64px"
       },
       mainGrid: {
-        padding: "110px 20px 20px 20px"
+        padding: "110px 0 20px 20px"
       }
     }
   )
