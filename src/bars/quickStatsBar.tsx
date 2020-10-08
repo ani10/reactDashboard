@@ -86,7 +86,7 @@ const QuickStatusBar: React.FC = () => {
   })
   
   return(
-    <Box marginTop="64px">
+    <Box marginTop="76px">
     <Grid container className={classes.root}>
       <div  className={classes.quickStatRoot}>
         {data.map((item : QuickStat, index: number = 0) => {
