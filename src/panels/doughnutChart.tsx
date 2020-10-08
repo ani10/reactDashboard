@@ -17,7 +17,7 @@ createStyles(
   )
 );
 
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 const DoughnutChart: React.FC =() => {
   const classes = useStyles();
   const options: ChartData = JSON.parse(JSON.stringify(DATA)).default;

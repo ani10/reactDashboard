@@ -5,19 +5,17 @@ import QuickStatusBar from "./bars/quickStatsBar"
 import './App.css';
 import LineChart from './panels/lineChart';
 import DoughnutChart from './panels/doughnutChart';
-import { Box, Grid } from '@material-ui/core';
+import {  Grid } from '@material-ui/core';
 
 function App() {
   return (
     <div className="App">
-      <Box>
-        <Header />
-      </Box>
-      <Box>
-        <NavBar />
-      </Box>
-      <Box>
-        <Grid container spacing={3}>
+
+      <Header />
+      <Grid>
+      </Grid>
+        <Grid container spacing={3} wrap="wrap">
+          <NavBar />
           <Grid item xs={12}>
             <QuickStatusBar />
           </Grid>
@@ -28,7 +26,6 @@ function App() {
             <DoughnutChart></DoughnutChart>
           </Grid>
         </Grid>
-      </Box>
     </div>
   );
 }

@@ -21,7 +21,7 @@ const Header: React.FC = () => {
 
   return(
     <div className={classes.root}>
-      <AppBar color="white">
+      <AppBar color="inherit">
         <ToolBar>
           <SearchBar></SearchBar>
         </ToolBar>

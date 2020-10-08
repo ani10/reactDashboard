@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.up('sm')]: {
         width: drawerWidth,
         flexShrink: 0,
-        //backgroundColor: "#ff7043"
       },
     },
     menuButton: {
