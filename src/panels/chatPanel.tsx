@@ -14,16 +14,18 @@ createStyles(
       root: {
         flexGrow: 1,
         color: "#fc6860",
-      },
-      chatbox: {
-        height: '800px',
+        position: "fixed",
+        right: 0,
+        top: "160px",
+        maxHeight: "100vh",
         overflowY: "scroll",
-        marginTop: "-10px",
+        height: '80vh',
+        maxWidth:"20%"
       },
       chatTopBar: {
-        position: "fixed",
-        width: "30%",
         zIndex: 999,
+        position: "fixed",
+        width: '20%'      
       },
       chatHeadButtons: {
         display: "inline-block",
@@ -32,6 +34,9 @@ createStyles(
         textAlign: 'center',
         color: theme.palette.text.secondary,
         width: "33.33%",
+      },
+      chatBox:{
+        paddingTop: "64"
       },
       chatHead: {
         width: "100%",
@@ -84,10 +89,8 @@ createStyles(
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         width: '100%',
       },
-      chatSearch: {
-        width: "100%",
-        display: "flex",
-        padding: "10px 5px 10px 5px",
+      scrollableY: {
+        overflowY: "auto"
       },
     }
   )
@@ -99,8 +102,7 @@ const ChatPanel: React.FC = () => {
   let data = JSON.parse(JSON.stringify(DATA)).default;
 
   return(
-    <div className={classes.root}>
-      <Card className={classes.chatbox} square={true}>
+      <Card className={classes.root} square={true}>
         <Box className={classes.chatTopBar}>
           <Card className={classes.chatHeadButtons} square={true}>
             <PeopleAltIcon></PeopleAltIcon>
@@ -112,8 +114,9 @@ const ChatPanel: React.FC = () => {
             <ThumbUpAltIcon></ThumbUpAltIcon>
           </Card>
         </Box>
-        <Box >
-          <Card square={true} className={classes.chatHead}></Card>
+        <Box className={classes.chatBox} >
+          <Card square={true} className={classes.chatHead}>
+          </Card>
           {data.map((item: ChatHead)=>{ 
             return(
               <Card square={true} className={classes.chatHead}>
@@ -134,26 +137,24 @@ const ChatPanel: React.FC = () => {
               </Card>
             );
           })}
-        </Box>
-      </Card>
-      <Card square={true} className={classes.chatSearch}>
-        <Grid container justify='center' className={classes.root}>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+          <Card square={true} className={classes.chatHead}>
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <InputBase
+                placeholder="Search people, chats..."
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+                inputProps={{ 'aria-label': 'search' }}
+              />
             </div>
-            <InputBase
-              placeholder="Search people, chats..."
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-        </Grid>
+          </Card>
+        </Box>
+        
       </Card>
-    </div>
   )
 }
 export default ChatPanel;

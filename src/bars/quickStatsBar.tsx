@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       flexGrow: 1,
+      maxWidth: "100vw"
     },
     triangleIndicator:{
       fontSize: '20px',

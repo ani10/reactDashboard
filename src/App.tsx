@@ -38,9 +38,10 @@ function App() {
           <Grid item lg={3} sm={6}>
             <DoughnutChart></DoughnutChart>
           </Grid>
-          <Grid item lg={4} sm={6}>
+          
+        </Grid>
+        <Grid item lg={4} sm={6}>
             <ChatPanel></ChatPanel>
-          </Grid>
         </Grid>
       </Grid>
 
