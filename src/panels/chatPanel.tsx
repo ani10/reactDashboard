@@ -17,10 +17,12 @@ createStyles(
       chatbox: {
         height: '800px',
         overflowY: "scroll",
-        marginTop: "-10px"
+        marginTop: "-10px",
       },
-      chatBar: {
-
+      chatTopBar: {
+        position: "fixed",
+        width: "30%",
+        zIndex: 999,
       },
       chatHeadButtons: {
         display: "inline-block",
@@ -33,7 +35,7 @@ createStyles(
       chatHead: {
         width: "100%",
         display: "flex",
-        padding: "20px",
+        padding: "30px",
       },
       chatHeadTitle: {
         color: "grey",
@@ -65,7 +67,7 @@ const ChatPanel: React.FC = () => {
   return(
     <div className={classes.root}>
       <Card className={classes.chatbox} square={true}>
-        <Box className={classes.chatBar}>
+        <Box className={classes.chatTopBar}>
           <Card className={classes.chatHeadButtons} square={true}>
             <PeopleAltIcon></PeopleAltIcon>
           </Card>
@@ -76,7 +78,9 @@ const ChatPanel: React.FC = () => {
             <ThumbUpAltIcon></ThumbUpAltIcon>
           </Card>
         </Box>
-        <Box>
+        <Box >
+          <Card square={true} className={classes.chatHead}></Card>
+
           {data.map((item: ChatHead)=>{ 
             return(
               <Card square={true} className={classes.chatHead}>
