@@ -3,9 +3,10 @@ import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import ForumIcon from '@material-ui/icons/Forum';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
-import { makeStyles, Theme, createStyles, Card, Box, Avatar } from "@material-ui/core";
+import { makeStyles, Theme, createStyles, Card, Box, Avatar, Grid, InputBase } from "@material-ui/core";
 import * as DATA from "../mockdata/chatPanelData.json"
 import ChatHead from "../interfaces/ChatHead";
+import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme: Theme) => 
 createStyles(
@@ -55,6 +56,39 @@ createStyles(
       messageIcon: {
         alignSelf: "center",
       },
+      search: {
+        position: 'relative',
+        borderRadius: 'theme.shape.borderRadius',
+        margin: "2px",
+        width: '100%',
+      },
+      searchIcon: {
+        color: '#8E8E8E',
+        zIndex: 1,
+        padding: theme.spacing(0, 2),
+        height: '100%',
+        position: 'absolute',
+        pointerEvents: 'none',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      inputRoot: {
+        borderRadius: '10px',
+        background: "eeeeee",
+        borderBottom: "1px solid #e0e0e0",
+        width:"100%"
+      },
+      inputInput: {
+        padding: '5px',
+        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+        width: '100%',
+      },
+      chatSearch: {
+        width: "100%",
+        display: "flex",
+        padding: "10px 5px 10px 5px",
+      },
     }
   )
 );
@@ -80,7 +114,6 @@ const ChatPanel: React.FC = () => {
         </Box>
         <Box >
           <Card square={true} className={classes.chatHead}></Card>
-
           {data.map((item: ChatHead)=>{ 
             return(
               <Card square={true} className={classes.chatHead}>
@@ -102,6 +135,23 @@ const ChatPanel: React.FC = () => {
             );
           })}
         </Box>
+      </Card>
+      <Card square={true} className={classes.chatSearch}>
+        <Grid container justify='center' className={classes.root}>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search people, chats..."
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
+        </Grid>
       </Card>
     </div>
   )
