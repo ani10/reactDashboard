@@ -20,7 +20,6 @@ createStyles(
         maxHeight: "100vh",
         overflowY: "scroll",
         height: '80vh',
-        maxWidth:"20%"
       },
       chatTopBar: {
         zIndex: 999,

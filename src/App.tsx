@@ -35,7 +35,7 @@ function App() {
           <Grid item lg={5} sm={12}>
             <LineChart></LineChart>
           </Grid>
-          <Grid item lg={3} sm={6}>
+          <Grid item lg={4} sm={6}>
             <DoughnutChart></DoughnutChart>
           </Grid>
           
