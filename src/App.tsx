@@ -17,7 +17,7 @@ createStyles(
         margin: "64px 0 0 64px"
       },
       mainGrid: {
-        padding: "110px 0 20px 20px"
+        padding: "110px 100px 20px 20px"
       }
     }
   )
@@ -32,7 +32,7 @@ function App() {
         <NavBar />
         <QuickStatusBar />
         <Grid className={classes.mainGrid} container spacing={3}>
-          <Grid item lg={5} sm={12}>
+          <Grid item lg={6} sm={12}>
             <LineChart></LineChart>
           </Grid>
           <Grid item lg={4} sm={6}>
@@ -40,7 +40,7 @@ function App() {
           </Grid>
           
         </Grid>
-        <Grid item lg={4} sm={6}>
+        <Grid item lg={2} sm={6}>
             <ChatPanel></ChatPanel>
         </Grid>
       </Grid>
