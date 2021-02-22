@@ -32,10 +32,10 @@ function App() {
         <NavBar />
         <QuickStatusBar />
         <Grid className={classes.mainGrid} container spacing={3}>
-          <Grid item lg={6} sm={12}>
+          <Grid item lg={6} sm={12} xs={12}>
             <LineChart></LineChart>
           </Grid>
-          <Grid item lg={4} sm={6}>
+          <Grid item lg={4} sm={6} xs={12}>
             <DoughnutChart></DoughnutChart>
           </Grid>
           

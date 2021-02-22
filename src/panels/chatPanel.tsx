@@ -2,7 +2,6 @@ import React from "react";
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import ForumIcon from '@material-ui/icons/Forum';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
-import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import { makeStyles, Theme, createStyles, Card, Box, Avatar, Grid, InputBase } from "@material-ui/core";
 import * as DATA from "../mockdata/chatPanelData.json"
 import ChatHead from "../interfaces/ChatHead";
@@ -20,11 +19,13 @@ createStyles(
         maxHeight: "100vh",
         overflowY: "scroll",
         height: '80vh',
+        width: '20vw',
+        flexShrink: 0,
       },
       chatTopBar: {
         zIndex: 999,
         position: "fixed",
-        width: '20%'      
+        width: '20vw'      
       },
       chatHeadButtons: {
         display: "inline-block",
@@ -60,11 +61,11 @@ createStyles(
       messageIcon: {
         alignSelf: "center",
       },
-      search: {
-        position: 'relative',
-        borderRadius: 'theme.shape.borderRadius',
-        margin: "2px",
-        width: '100%',
+      searchbox:{
+        zIndex: 999,
+        position: "fixed",
+        bottom: 0,
+        width: '20vw',
       },
       searchIcon: {
         color: '#8E8E8E',
@@ -130,14 +131,11 @@ const ChatPanel: React.FC = () => {
                     {item.position}
                   </div>
                 </span>
-                <span className={classes.messageIcon}>
-                  <QuestionAnswerIcon/>
-                </span>  
               </Card>
             );
           })}
-          <Card square={true} className={classes.chatHead}>
-            <div className={classes.search}>
+          <Card square={true} className={classes.searchbox}>
+            <div>
               <div className={classes.searchIcon}>
                 <SearchIcon />
               </div>
